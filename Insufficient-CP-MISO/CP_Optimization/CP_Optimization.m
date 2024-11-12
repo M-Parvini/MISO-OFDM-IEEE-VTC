@@ -41,7 +41,7 @@ for i=1:length(contourvec)
         %%% optimization problem
         minimize w1*M+w2*S
         subject to 
-            -1+P_ISI*(gamma_th+1)+gamma_th*inv_pos(10^(S/10)) <= 0;
+            -1+2*P_ISI*gamma_th+gamma_th*inv_pos(10^(S/10)) <= 0;
              S(n) <= maxsnr;
             -S(n) <= -1;   % to avoid making the inv_pos to infinity!
              M(n) <= maxtapnum;
